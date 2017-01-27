@@ -17,3 +17,23 @@ buildscript {
     }
 }
 ```
+
+## Dropping sources to Dropbox
+   Create an app in `Dropbox` and generate access token for the app from `Dropbox AppConsole`. Copy the access token and add it in your `gradle.properties` or just paste it in your `build.gradle`
+
+### Add dropCode{} in your build.gradle
+
+```gradle
+
+dropCode {
+    accessToken 'ACCESS_TOKEN_FROM_DROPBOX'
+} 
+```
+
+### Run dropCode
+Run the `dropCode` gradle task from terminal or Gradle Tools Window
+```gradle
+gradlew dropCode
+```
+
+That's all. Your Project Source will be zipped and dropped to Dropbox.
