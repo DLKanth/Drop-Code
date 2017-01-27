@@ -37,3 +37,15 @@ gradlew dropCode
 ```
 
 That's all. Your Project Source will be zipped and dropped to Dropbox.
+
+
+##### Change Source ZipFile name.
+By default, DropCode will name the source zip with current date and time. You can change the name of source zip to be dropped in Dropbox. 
+Follow the below snippet.
+
+```gradle
+dropCode {
+    accessToken 'ACCESS_TOKEN_FROM_DROPBOX'
+    dropFileName 'sourceFile'
+}
+```
