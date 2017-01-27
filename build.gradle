@@ -1,0 +1,28 @@
+group 'me.dlkanth'
+version '1.0'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('repo'))
+        }
+    }
+}
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    compile 'com.dropbox.core:dropbox-core-sdk:2.1.1'
+    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
